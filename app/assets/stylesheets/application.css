@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+section, div {
+  display: block
+  font-family: sans-serif;
+}
+
+.group:after {
+  clear: both;
+  content: "";
+}
+
+.chart {
+  width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.y-label {
+  width: 270px;
+  text-align: center;
+  transform: rotate(-90deg);
+  transform-origin: left top 0;
+}
+
+.x-label {
+  text-align: center;
+  position: relative;
+  bottom: 25px;
+}
