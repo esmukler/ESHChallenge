@@ -50,4 +50,4 @@ First, I had ActiveRecord run the SQL commands to input the first seed file.
 Then, I converted the MongoDB seed file into a Ruby Hash
 and ran a few ruby methods to input that data.
 * With all of my data contained in those models, I wrote a method on the [School model](app/models/school.rb) that calculated the average cost per megabit.
-* I used Google Charts and the (ChartKick Ruby Gem)[https://github.com/ankane/chartkick] to create the bar graph.
+* I used Google Charts and the [ChartKick Ruby Gem](https://github.com/ankane/chartkick) to create the bar graph.
