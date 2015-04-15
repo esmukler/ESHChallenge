@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require_relative 'mongo_seeds'
+
+connection = ActiveRecord::Base.connection
+
+statements = File.readlines('db/seed.sql')
+
+ActiveRecord::Base.transaction do
+  statements.each do |statement|
+    connection.execute(statement)
+  end
+end
+
+mongo_seeds.each do |seed|
+  school = School.create!(name: seed["name"], ben: seed["ben"])
+  seed["purchases"].each do |purch|
+    purchase = school.purchases.create!(
+      ben: seed["ben"], bandwidth: purch[:bandwidth],
+      measure: purch[:measure],
+      cost: purch[:cost]
+    )
+  end
+end
