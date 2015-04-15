@@ -18,6 +18,11 @@ section, div {
   font-family: sans-serif;
 }
 
+header {
+  margin: 0 auto;
+  text-align: center;
+}
+
 .group:after {
   clear: both;
   content: "";
