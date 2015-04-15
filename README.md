@@ -43,9 +43,11 @@ Postgresql. The data format here is similar. You will have to create the tables 
 
 ## Notes:
 
-This application uses Postgresql only.
-I couldn't get Mongoid (the MongoDB Ruby gem) running alongside Postgresql in time.
-As a workaround, I [seeded my database twice](db/seeds.rb) to the same School and SchoolPurchase models.
-First, I ran the SQL commands.
-Then, I quickly converted the MongoDB file into a Ruby Hash
-and ran a ruby script to input the data into the same models.
+* This application uses Postgresql only.
+* I couldn't get Mongoid (the MongoDB Ruby gem) running alongside Postgresql in time.
+* As a workaround, [I seeded my database twice](db/seeds.rb) to the same School and SchoolPurchase models.
+First, I had ActiveRecord run the SQL commands to input the first seed file.
+Then, I converted the MongoDB seed file into a Ruby Hash
+and ran a few ruby methods to input that data.
+* With all of my data contained in those models, I wrote a method on the [School model](app/models/school.rb) that calculated the average cost per megabit.
+* I used Google Charts and the (ChartKick Ruby Gem)[https://github.com/ankane/chartkick] to create the bar graph.
