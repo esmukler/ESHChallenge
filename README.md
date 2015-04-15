@@ -45,7 +45,7 @@ Postgresql. The data format here is similar. You will have to create the tables 
 
 This application uses Postgresql only.
 I couldn't get Mongoid (the MongoDB Ruby gem) running alongside Postgresql in time.
-As a workaround, I [seeded my database twice]("db/seeds.rb") to the same School and SchoolPurchase models.
+As a workaround, I [seeded my database twice](db/seeds.rb) to the same School and SchoolPurchase models.
 First, I ran the SQL commands.
 Then, I quickly converted the MongoDB file into a Ruby Hash
 and ran a ruby script to input the data into the same models.
